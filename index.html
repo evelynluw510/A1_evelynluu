@@ -3,36 +3,38 @@
 
 <head>
 
-    <!-- METADATA GOES HERE -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="style.css" rel="stylesheet">
+  <!-- METADATA GOES HERE -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 1 Evelyn Luu</title>
+  <link href="style.css" rel="stylesheet">
 
-    <!-- BOOTSTRAP 5 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- BOOTSTRAP 5 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 
 </head>
 
 <body>
 
-    <!-- CONTENT GOES HERE -->
-  
+  <!-- CONTENT GOES HERE -->
+  <div class="text-center">
+  <div class="big-title">Weekly Screen Time Breakdown: Where My Hours Go</div>
+  <br>
   <div class="container mt-3">
     <div class="row">
-      <div class="col-6">
+      <div class="col-8">
 
-        <h1>Language</h1>
-        <p>What is your primary language?</p>
+        <h1>Weekly screen time</h1>
+        <p>My screen time breakdown by app</p>
 
         <div>
           <canvas id="myChart"></canvas>
@@ -44,30 +46,45 @@
           const ctx = document.getElementById('myChart');
 
           new Chart(ctx, {
-            type: 'pie',
+            type: 'bar',
             data: {
-              labels: ['English', 'French', 'Other', 'Prefer Not to Say'],
+              labels: ['Tiktok', 'Messenger', 'Safari', 'Instagram', 'Whatsapp'],
               datasets: [{
-                label: '# of Responses',
-                data: [44, 2, 51, 3],
+                label: 'Hours spent per app',
+                data: [18, 10, 8, 3, 1],
                 borderWidth: 1
               }]
             },
             options: {
               scales: {
                 y: {
-                  beginAtZero: true
+                  beginAtZero: true,
+                  min: 0, // Set minimum Y value
+                  max: 168, // Set maximum Y value
+                  ticks: {
+                    stepSize: 24 // Defines intervals between values
+                  }
                 }
               }
             }
           });
         </script>
+        <br>
 
+        <p>My weekly screen time record shows how I share up my time across various apps. TikTok is at the top of the
+          list, taking up over 18 hours of my week, followed by Messenger at 10. Instagram takes up three hours of my
+          time, whereas Safari takes up eight hours, probably from surfing and research. Finally, at one hour, WhatsApp
+          experiences the least amount of usage. It's interesting to see where my screen time is going, as I've spent 40
+          hours on just five apps alone.
+
+          </p>
+
+          <br><br><br>
       </div>
-      <div class="col-6">
+      <div class="col-8">
 
-        <h1>First Generation</h1>
-        <p>Have your parents attended college before you?</p>
+        <h1>Average Pickups</h1>
+        <p>Number of total pickups</p>
 
         <div>
           <canvas id="myChart2"></canvas>
@@ -77,31 +94,43 @@
           const ctx2 = document.getElementById('myChart2');
 
           new Chart(ctx2, {
-            type: 'pie',
+            type: 'bar',
             data: {
-              labels: ['Yes', 'No', 'Do Not Know', 'Prefer Not to Say'],
+              labels: ['Tiktok', 'Messenger', 'Safari', 'Instagram', 'Whatsapp'],
               datasets: [{
-                label: '# of Responses',
-                data: [65, 30, 2, 3],
+                label: 'Times opened on first pickup',
+                data: [130, 43, 96, 31, 73],
                 borderWidth: 1
               }]
             },
             options: {
               scales: {
                 y: {
-                  beginAtZero: true
+                  beginAtZero: true,
+                  min: 0, // Set minimum Y value
+                  max: 150, // Set maximum Y value
+                  ticks: {
+                    stepSize: 10 // Defines intervals between values
+                  }
                 }
               }
             }
           });
         </script>
-
+        <br>
+        <p>TikTok is by far the most used app, since I open it 130 times a week, according to my Average Pickups chart.
+          This implies that anytime I unlock my phone, I have a strong habit of automatically checking TikTok.Safari
+          comes in second with 96 pickups, suggesting that it is frequently used for web searches or browsing. With 43
+          pickups, Messenger is probably used for communication, although significantly less frequently than TikTok or
+          Safari. It's interesting to note that Instagram only receives 31 pickups. This could indicate that I use
+          Instagram less regularly and for longer periods of time. With 73 picks, WhatsApp falls somewhere in the
+          middle, showing consistent but occasional use.</p1>
       </div>
 
       <div class="col-12 mt-3">
 
-        <h1>Admission Comparison</h1>
-        <p>George Brown vs Sheridan</p>
+        <h1>Weekly average screen time</h1>
+        <p>Two-week comparision</p>
 
         <div>
           <canvas id="myChart3"></canvas>
@@ -113,16 +142,16 @@
           new Chart(ctx3, {
             type: 'line',
             data: {
-              labels: ['2006', '2007', '2008', '2009', '2010'],
+              labels: ['Tiktok', 'Messenger', 'Safari', 'Instagram', 'Whatsapp'],
               datasets: [
                 {
-                  label: 'George Brown',
-                  data: [11102, 11855, 12748, 13866, 13914],
+                  label: 'Week of 13-20 January, 2025',
+                  data: [23, 7, 8, 3, 1],
                   borderWidth: 1
                 },
                 {
-                  label: 'Sheridan',
-                  data: [11768, 11963, 12439, 13394, 14249],
+                  label: 'Week of 21-27 January, 2025',
+                  data: [18, 10, 8, 3, 1],
                   borderWidth: 1
                 }
               ]
@@ -138,11 +167,22 @@
         </script>
 
       </div>
-
     </div>
+    <br><br>
+    <p>Tracking my screen time over several weeks gives me important information about how my app usage changes. My
+      usage decreased from 23 hours in the first week to 18 hours in the second, while TikTok is still the most
+      popular app. This decline suggests that I might have consciously tried to spend less time scrolling. However,
+      Messenger increased from 7 to 10 hours, suggesting that I might have been more active in messaging or chats
+      during the second week. Instagram and WhatsApp usage did not vary, remaining at 3 and 1 hours, respectively,
+      while Safari usage stayed steady at 8 hours.</p1>
   </div>
-
-
+<br><br>
+<p>Overall, the pattern shows that I've been using TikTok less, but I've been using communication applications more or less. I may have a better understanding of my digital habits and figure out whether I want to keep adjusting my screen time in order to achieve a better balance by going over these weekly revisions.</p1>
+<br><br><br>
+  <footer>
+    <p>Created by Evelyn Luu</p>
+  </footer>
+</div>
 </body>
 
 </html>
